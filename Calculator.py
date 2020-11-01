@@ -10,6 +10,10 @@ def multiplicaton(a, b):
     return a * b
 
 
+def division(a, b):
+    return a / b
+
+
 class Calculator:
     result = 0
 
@@ -26,4 +30,8 @@ class Calculator:
 
     def multiply(self, a, b):
         self.result = multiplicaton(a, b)
+        return self.result
+
+    def divide(self, a, b):
+        self.result = division(a, b)
         return self.result

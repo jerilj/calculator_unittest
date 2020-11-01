@@ -29,6 +29,12 @@ class MyTestCase(unittest.TestCase):
         for row in sub_data.data:
             self.assertEqual(self.calculator.multiply(int(row['Value 2']), int(row['Value 1'])), int(row['Result']))
 
+    def test_divide_method(self):
+        sub_data = CSVReader('csv/Unit Test Division.csv')
+        for row in sub_data.data:
+            self.assertEqual(round(self.calculator.divide(float(row['Value 2']), float(row['Value 1'])), 9),
+                             float(row['Result']))
+
 
 if __name__ == '__main__':
     unittest.main()
