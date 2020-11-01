@@ -19,5 +19,11 @@ class MyTestCase(unittest.TestCase):
         for row in add_data.data:
             self.assertEqual(self.calculator.add(int(row['Value 1']), int(row['Value 2'])), int(row['Result']))
 
+    def test_subtract_method(self):
+        sub_data = CSVReader('csv/Unit Test Subtraction.csv')
+        for row in sub_data.data:
+            self.assertEqual(self.calculator.subtract(int(row['Value 2']), int(row['Value 1'])), int(row['Result']))
+
+
 if __name__ == '__main__':
     unittest.main()
