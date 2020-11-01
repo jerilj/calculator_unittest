@@ -14,6 +14,10 @@ def division(a, b):
     return a / b
 
 
+def get_square_root(a):
+    return a ** 0.5
+
+
 class Calculator:
     result = 0
 
@@ -38,4 +42,8 @@ class Calculator:
 
     def square(self, a):
         self.result = multiplicaton(a, a)
+        return self.result
+
+    def square_root(self, a):
+        self.result = get_square_root(a)
         return self.result

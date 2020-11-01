@@ -40,6 +40,12 @@ class MyTestCase(unittest.TestCase):
         for row in sub_data.data:
             self.assertEqual(self.calculator.square(int(row['Value 1'])), int(row['Result']))
 
+    def test_sqrt_method(self):
+        sub_data = CSVReader('csv/Unit Test Square Root.csv')
+        for row in sub_data.data:
+            self.assertEqual(round(self.calculator.square_root(float(row['Value 1'])), 8),
+                             round(float(row['Result']), 8))
+
 
 if __name__ == '__main__':
     unittest.main()
